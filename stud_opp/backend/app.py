@@ -1,7 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 graph = {
     "html": {"css": 0.9, "javascript": 0.6},
@@ -84,7 +87,7 @@ def compute_score(st_skills,job_list):
 app=Flask(__name__)
 CORS(app)
 
-MOCK_API_URL="https://695fe55d7f037703a815232a.mockapi.io/stud/jobList"
+MOCK_API_URL = os.getenv("MOCK_API_URL")
 
 
 @app.route('/match-jobs', methods=['POST'])
@@ -108,4 +111,5 @@ def matchJob():
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
         
+
 
