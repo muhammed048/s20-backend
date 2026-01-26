@@ -1,0 +1,112 @@
+/* Container Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  background-color: #000;
+  padding: 24px;
+}
+
+/* Base Card Styling */
+.opportunity-card {
+  background-color: #111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+/* Direct Match Highlight */
+.opportunity-card.direct-match {
+  border-color: #10b981; /* Emerald */
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.card-header h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Badge for Top Matches */
+.match-badge {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-size: 10px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Progress Bar Styling */
+.progress-container {
+  margin-bottom: 24px;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.progress-track {
+  height: 6px;
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #f59e0b; /* Orange default */
+  transition: width 0.8s ease-out;
+}
+
+.direct-match .progress-fill {
+  background: #10b981; /* Emerald for top matches */
+}
+
+/* Learning Tip (The Polish) */
+.tip-box {
+  background: rgba(59, 130, 246, 0.05); /* Very subtle blue tint */
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.direct-match .tip-box {
+  background: rgba(16, 185, 129, 0.05); /* Subtle green tint */
+  border-color: rgba(16, 185, 129, 0.1);
+}
+
+.tip-box label {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #3b82f6;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.direct-match .tip-box label {
+  color: #10b981;
+}
+
+.tip-box p {
+  font-size: 13px;
+  color: #999;
+  line-height: 1.5;
+  margin: 0;
+}
