@@ -238,3 +238,23 @@
 .empty-state {
   padding: var(--spacing-12) var(--spacing-6);
 }
+
+/* updated style by macron */
+/* Fix for clickable path cards */
+.path-selection-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.path-selection-card--selected {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.path-selection-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}

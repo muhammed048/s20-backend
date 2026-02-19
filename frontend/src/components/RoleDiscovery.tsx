@@ -155,8 +155,9 @@ export const RoleDiscovery: React.FC<RoleDiscoveryProps> = ({
               fullWidth
               icon={<Briefcase size={16} />}
               onClick={() => onSelectRole(role)}
+              disabled={role.fitScore>=90}
             >
-              View Roadmap
+              {role.fitScore >= 90? "Already Qualified": "View Roadmap"}
             </Button>
           </Card>
         ))}

@@ -215,6 +215,12 @@ export const JobResults: React.FC<JobResultsProps> = ({
                                 </div>
                             )}
 
+                            {/* disable view roadmap btn if value null */}
+                            {job.learning_paths &&(
+                                job.learning_paths.fast_path?.skills?.length>0 ||
+                                job.learning_paths.cheap_path?.skills?.length>0 ||
+                                job.learning_paths.safe_path?.skills?.length>0
+                            ) ? (
                             <Button 
                                 variant="outline" 
                                 fullWidth
@@ -223,7 +229,20 @@ export const JobResults: React.FC<JobResultsProps> = ({
                             >
                                 View Roadmap
                             </Button>
-
+                            ) : (
+                                <div style={{
+                                    textAlign: 'center',
+                                    padding: '1rem',
+                                    background: '#f0fdf4',
+                                    borderRadius: '0.375rem',
+                                    border: '1px solid #d1fae5',
+                                    color: '#166534',
+                                    fontSize: '0.875rem',
+                                    fontWeight: '500'
+                                }}>
+                                    You're already qualified! ({job.match_percentage}%)
+                                </div>
+                            )}
                         </Card>
                     );
                 })}
